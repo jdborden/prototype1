@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--
+
+ Built by Jonathan Borden
+ 
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <link rel='stylesheet' href="main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Raleway&family=Dancing+Script&family=Satisfy&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    </head>
+    <body onload="loader()" id="background" style="background-position: 4px 279px; background-color: black; background-image: url(moon.png); background-size: 162%; transition: 2s background-color;">
+        <div class="section" id="main">
+            <h1>From Another World</h1>
+            <div id="firstbox"></div>
+        </div>
+        <div class="section" id="two">
+            <h2>When was the last time you took a good look at the moon?</h2>
+            <div class="textbox">
+                <div class="textscroller" style="top: 0px">
+                    <p>This strangely beautiful object that occupies the night sky means different things to different cultures, yet it is perhaps the perfect symbolization of a feeling we're all familiar with: <br>
+                        <span id="center">Wonderment.</span> </p>
+                    <p>When we’re able to clearly see it’s cratered, pale surface, we’re witnessing a truly alien object. Nothing about it resembles our own surroundings. It’s almost impossible not to wonder what it would be like to stand upon its surface and experience its environment. In that moment, we’re imagining a world completely unlike anything we’re familiar with. </p>
+                </div>
+            </div>   
+        </div>
+        <div class="section" id="three">
+            <h2>Music has that same capacity to ignite the imagination.</h2>
+            <div class="textbox">
+                <div class="textscroller" id="third" style ="top: 0px">
+            <p>A symphony is like a world of sound. Each is unique, with its own logic and distinct features.</p>
+            <p id="fish">Some symphonies resemble the Earth in that they use familiar sounds and patterns that we are used to hearing over the course of our lives. </p>
+            <p>Others take us to more distant places, away from our comfortable Earthen habitat. It follows different logic and changes our idea of what music is.</p>
+                </div>
+            </div>
+            <div class="blackbox" id="blackbox1"></div>
+        </div>
+        <div class="section" id="four">
+            <h2 id='critique'><span>On that spectrum,</span> today’s music could be thought of as the lunar equivalent. </h2>
+            <div class="textbox">
+                <div class="textscroller" id="fourth" style="top: 0px">
+                    <p>Written by Russian composer Sergei Prokofiev, this symphony was written in a single month during the Second World War.</p>
+                    <p>War may not be alien to us, but the horrors of it, particularly in the Second World War, are hard to comprehend.</p>
+                    <p>There's no doubt that the war heavily influenced this symphony. This excerpt is from the symphony's third movement, a strange yet beautiful moment set within a brilliantly expressive work.</p>
+                    <p>Swipe right to listen.</p>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+<!--        <div class="section" id="five">
+            <h2>I get it.</h2>
+            <div class="textbox">
+                <div class="textscroller" style="top: 0px">
+                    <p>If all you’ve heard is music that sounds like this, it’s probably not engaging your imagination.</p>
+                    <p>Music like this is beautiful in ways just like a clear blue sky can be beautiful. It’s beautiful, but not foreign to us. It operates under rules that we’re used to hearing. </p>
+                </div>
+            </div>
+        </div>-->
+<!--        <div class="section" id="six">
+            <h2>What music breaks the rules, then?</h2>
+            <div class="textbox">
+                <div class="textscroller" style="top: 0px">
+            <p id="moonentrance">Well, there’s a lot. I want to share with you just one example: the final movement of Sergei Prokofiev’s first violin concerto.</p>
+            <p id="moonreturn">I can’t help but think of the moon when I listen to it, imagining both the beautiful and alien nature of its surface. </p>
+                </div>
+            </div>
+            <div class="blackbox" id="blackbox3"></div>
+        </div>-->
+        <div class="playersection" id="seven">
+            <h2 class="player">Sergei Prokofiev</h2>
+            <h2 class="player">Symphony #5, op. 100</h2>
+            <h3>III. Adagio</h3>
+            <p class="captions">The music begins with an odd pairing: like footsteps in low gravity, we hear deep, careful bass notes and quick, rebounding notes in the upper strings. This upper string figure stays constant throughout the movement.</p>
+            <p class="captions">Enter the clarinet with the main melody. Notice how the texture in the lower strings smooths out to make space.</p>
+            <p class="captions">Something doesn't fit, though. The violins are playing in a rhythm in groups of three, while the clarinet is playing in groups of two. Listen for how these two instruments seem to be operating at different speeds. This is called polyrhythm.</p>
+            <p class="captions">Now the upper strings continue the melody. Try to listen for the different layers within the string texture, there are many moving parts.</p>
+            <p class="captions">This is a strange, hollow sounding combination of piccolo, the highest-pitched wind instrument, and bassoon, one of the lowest-pitched.</p>
+            <p class="captions">Back to the main melody that the clarinet introduced, but now more fully voiced by the strings. Listen again for the polyrhythm. Enjoy the rich sound of a full string section.</p>
+            <p class="captions">Et cetera</p>
+            
+            <button onclick="captions()" id="button">Listen</button>
+            <div class="blackbox" id='blackbox2'></div>
+        </div>
+        <audio id="handel" src="handel.mp4"></audio>
+        <audio id="prok5" src="prok5.mp4"></audio>
+        <audio id="prokV" src="prok.mp4"></audio>
+        <script>
+// Loading event
+    function loader() {
+            var prok5_audio = document.getElementById("prok5");
+            var start = document.getElementById("main");
+            var firstbox = document.getElementById("firstbox");
+            function oddFader() {
+                    var title = document.getElementsByTagName("h1");
+                    title[0].style.opacity = 1;
+                }
+            start.addEventListener("click", function() {
+                prok5_audio.play();
+                firstbox.style.opacity = 0;
+                
+                setTimeout(oddFader, 5000);
+            });
+    };
+// general scroll mechanic            
+            var section = document.getElementsByClassName("section");
+            for (i=0; i < section.length; i++) {
+                section[i].addEventListener("wheel", function() {
+                    window.scrollBy(375,0);
+                    
+                });
+            };
+// paragraph clicker            
+
+        i = 1;
+        n = 0;
+        var textbox = document.getElementsByClassName("textbox");
+        var focus = textbox[n].getBoundingClientRect();
+        var textscroller = document.getElementsByClassName("textscroller");
+        var paragraphs = textscroller[n].children;
+        function metacounter() {
+                n++;
+                var paragraphs = textscroller[n].children;
+                var focus = textbox[n].getBoundingClientRect();
+                i = 1;
+                console.log("N =" + n);
+                
+                console.log(paragraphs);
+                console.log(textbox[n]);
+        };
+
+        function counter(meta) {
+            i++;
+            console.log(i);
+            var paragraphs = textscroller[n].children;
+            if(paragraphs[i] === undefined) {
+            meta();
+        }
+        };
+        function mover(callback, meta) {
+                        
+            var int = setInterval(function() {
+                var position = textscroller[n].style.top;
+                var focus = textbox[n].getBoundingClientRect();
+                var paragraphs = textscroller[n].children;
+               if (paragraphs[i].getBoundingClientRect().top === (focus.top + 20)) {
+                   
+                   paragraphs[i].style.opacity = 1;
+                   clearInterval(int);  
+                   callback(meta);
+                   
+               } else {
+                   var num = parseInt(position, 10);
+                   num -= 1;
+//                   console.log(focus.top);
+                   console.log(n);
+                   textscroller[n].style.top = num + "px";
+                   paragraphs[i - 1].style.opacity = 0;
+                   
+                   
+               }
+           }, 1);
+           
+        };
+        
+        var section = document.getElementsByClassName("section");
+        
+        for (j=1; j < section.length; j++) {
+        section[j].addEventListener("click", function() {
+            mover(counter, metacounter);
+        }); 
+    };
+
+
+       
+// audio fader
+function fader(source, limit, speed, amount) {
+    var player = document.getElementById(source);
+    var limit;
+    var interval = setInterval(function() {
+        var newVolume = player.volume - amount;
+            if (limit > 0) {
+                if (newVolume > limit) {
+                    player.volume = newVolume;
+                }
+                else {
+                    clearInterval(interval);
+                }
+            } else if (limit === 0) {
+                if (newVolume >= limit) {
+                    player.volume = newVolume;
+                }
+                else {
+                    clearInterval(interval);
+                    player.volume = 0;
+                    player.pause();
+                    player.currentTime = 0;
+                }
+            }   
+                   
+    }, speed);
+        
+                    }
+// transition functions        
+// from main to two
+        var body = document.getElementById("background");
+        var coordX = body.style.backgroundPositionX;
+        var coordY = body.style.backgroundPositionY;
+        section[0].addEventListener("wheel", function() {
+                var posi = 0;
+                var timer = setInterval(function() {
+                    if (posi === 270) {
+                        clearInterval(timer);
+                    } else {
+                        posi += 3;
+                        body.style.backgroundPositionX = (parseInt(coordX, 10) - posi) + "px";
+                        body.style.backgroundPositionY = (parseInt(coordY, 10) + posi) + "px";
+                    }
+                }, 5);
+                
+                    fader("prok5", 0.5, 600, 0.1);
+                
+                
+            });
+// from two to three     
+        var earth = document.getElementById("two");
+        earth.addEventListener("wheel", function() {
+                var coordX = body.style.backgroundPositionX;
+                
+                var posi = 0;
+                var timer = setInterval(function() {
+                    if (posi === 300) {
+                        clearInterval(timer);
+                        body.style.backgroundImage = "none";
+                    } else {
+                        posi += 3;
+                        body.style.backgroundPositionX = (parseInt(coordX, 10) - posi) + "px";
+                        
+                    }
+                }, 1);
+                function earthSwitcher() {
+                    var box = document.getElementsByClassName("blackbox");
+                    body.style.backgroundImage = "url(earth.png)";
+                    box[0].style.opacity = 0;
+                    body.style.backgroundPosition = "0px 500px";
+                    };
+                setTimeout(earthSwitcher, 500);
+                fader("prok5", 0, 1000, 0.1);
+                
+                
+        });
+// three to four
+//        var sky = document.getElementById("three");
+//        sky.addEventListener("wheel", function () {
+//            function earthRemover() {
+//                var box = document.getElementById("blackbox2");
+//                box.style.opacity = 1;
+//                
+//                
+//                
+//            };
+//            function boxRemover() {
+//                body.style.backgroundImage = "none";
+//                var box = document.getElementById("blackbox2");
+//                box.style.display = "none";
+//            }
+//            function blueSky() {
+//                
+//                body.style.backgroundColor = "#0eb0f7";
+//                
+//            }
+//            setTimeout(earthRemover, 300);
+//            setTimeout(boxRemover, 1100);
+//            setTimeout(blueSky, 1200);
+//        });
+// four to five       
+//        var boring = document.getElementById("boring");
+//        boring.addEventListener("click", function() {
+//            var handel = document.getElementById("handel");
+//            handel.volume = 0.25;
+//            handel.play();
+//            console.log(handel.volume);
+//        });
+//        var daylight = document.getElementById("four");
+//        daylight.addEventListener("wheel", function() {
+//            fader("handel", 0, 800, 0.05);
+//        });
+//        
+//        
+// five to six
+//        var space = document.getElementById("five");
+//        space.addEventListener("wheel", function() {
+//            body.style.transition = "1s background-color";
+//            body.style.backgroundColor = "black";
+//            function moonEnter() {
+//            var box = document.getElementById("blackbox3");
+//            box.style.display = "block";
+//            };
+//            function moonBackground() {
+//                body.style.backgroundImage = "url(moon.png)";
+//                body.style.backgroundPosition = "0px 394px";
+//            };
+//            setTimeout(moonEnter, 1000);
+//            setTimeout(moonBackground, 1100);
+//        });
+//        
+//        var moonReturn = document.getElementById("moonreturn");
+//        moonReturn.addEventListener("click", function() {
+//            
+//            box.style.opacity = 0;
+//        });
+// six to seven
+        var finaldiv = document.getElementById("four");
+        finaldiv.addEventListener("wheel", function() {
+            
+            
+                var box = document.getElementById("blackbox2");
+                box.style.opacity = 1;
+            
+            function moonEnter() {
+                body.style.backgroundImage = "url(moon.png)";
+            }
+            function boxRemove() {
+                box.style.opacity = 0;
+            }
+            
+            var button = document.getElementById("button");
+            button.style.position = "fixed";
+            setTimeout(boxRemove, 1100);
+            setTimeout(moonEnter, 1000);
+        });
+// Player
+
+        function captions() {
+            var text = document.getElementsByClassName("captions");
+            console.log(text);
+            var music = document.getElementById("prok5");
+            music.volume = 0.8;
+            music.play();
+            console.log(music.currentTime);
+            music.addEventListener('timeupdate', function () {
+                var time = Math.floor(music.currentTime);
+                console.log(time);
+                if (time === 0) {
+                    text[0].style.display = "inline-block";
+                } else if (time === 15) {
+                    text[0].style.display = "none";
+                    text[1].style.display = "inline-block";
+                } else if (time === 25) {
+                    text[1].style.display = "none";
+                    text[2].style.display = "inline-block";
+                } else if (time === 40) {
+                    text[2].style.display = "none";
+                    text[3].style.display = "inline-block";
+                } else if (time === 59) {
+                    text[3].style.display = "none";
+                    text[4].style.display = "inline-block";
+                } else if (time === 78) {
+                    text[4].style.display = "none";
+                    text[5].style.display = "inline-block";
+                } else if (time === 85) {
+                    text[5].style.display = "none";
+                    text[6].style.display = "inline-block";
+                }
+            });
+            
+        }
+        </script>  
+    </body>
+    
+</html>

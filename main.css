@@ -1,0 +1,181 @@
+/*
+
+ Built by Jonathan Borden
+ 
+*/
+/* 
+    Created on : Jun 20, 2020, 10:10:55 AM
+    Author     : Jonathan Borden
+*/
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+body {
+/*    background-color: black;
+    background-image: url(moon.png);
+    background-size: 162%;*/
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /*background-position: 4px 279px;*/
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    width: 700vw;
+    height: 100vh;
+    /*transition: 2s background-color;*/
+    box-sizing: border-box;
+    overflow-y: hidden;
+/*    overflow-x: hidden;*/
+}
+div.section, div.playersection {
+    width: 375px;
+    height: 100vh;
+
+}
+/* paragraph scroller */
+div.textbox{
+    width: 100%;
+    height: 60%;
+    position: relative;
+}
+div.textscroller {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+div.textscroller p:first-child {
+    opacity: 1;
+}
+p {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin: 10px 16px;
+    line-height: 180%;
+    font-size: 20px;
+    opacity: 0;
+    transition: 1s opacity;
+    
+    
+}
+span#center {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+/*div#four p {
+    font-size: 26px;
+    font-family: 'Sue Ellen Francisco';
+    margin-bottom: 30px;
+}
+div#four p:nth-child(2){
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+div#four p:nth-child(3) {
+    text-align: right;
+    margin-right: 10px;
+}
+div#four p:nth-child(4) {
+    text-align: left;
+    margin-left: 40px;
+}
+div#four p:nth-child(5) {
+    text-align: right;
+    margin-right: 45px;
+}
+div#four p:nth-child(6) {
+    font-size: 18px;
+    text-align: center;
+}*/
+div.line {
+    width: 80%;
+    margin: 10px;
+    height: 1px;
+    background-color: white;
+    opacity: 1;
+    transition: 1s opacity;
+}
+div.blackbox {
+    width: 100%;
+    height: 212px;
+    position: relative;
+    bottom: 115px;
+    background-color: black;
+    transition: 1s opacity;
+}
+div#blackbox2 {
+    bottom: -327px;
+    opacity: 0;
+    height: 300px;
+}
+div#blackbox3 {
+    display: none;
+    height: 400px;
+}
+div#firstbox {
+    background-color: black;
+    transition: 10s opacity;
+    width: 100%;
+    height: 520px;
+    position: relative;
+    bottom: 0;
+}
+/*p::after {
+    width: 85%;
+    height: 5px;
+    background-color: white;
+    display: block;
+    position: relative;
+    opacity: 1;
+    transition: 1s opacity;
+    content: "";
+}*/
+h1 {
+    font-family: 'Oswald';
+    font-size: 62px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    margin: 5px 0 20px 17px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: 5s opacity;
+}
+h2 {
+    font-size: 45px;
+    font-family: 'Oswald';
+    color: white;
+    margin: 13px 16px;
+    display: inline-block;
+}
+h2.player {
+    font-size: 36px;
+}
+h2#critique {
+    font-size: 30px;
+}
+h3 {
+    font-size: 24px;
+    font-family: 'Oswald';
+    color: white;
+    margin: 0px 18px;
+}
+button {
+    width: 60%;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 0 auto;
+    position: relative;
+    top: 450px;
+    left: 20%;
+    color: white;
+    font-family: 'Oswald';
+    font-size: 24px;
+}
+p.captions {
+    display: none;
+    opacity: 1;
+    margin: 30px 20px;
+}
